@@ -1,0 +1,62 @@
+# net architecture
+architecture: resnet34
+
+# checkpoint
+ckpt_path: ./
+ckpt_name: resnet34
+
+# log
+log_path: ./
+log_name: cifar10
+log_color:
+  train: blue
+  cost_time: yellow
+  time: purple
+  test: red
+
+
+# dataset
+data_name: CIFAR10
+num_classes: 10
+train_set_path: ./data/cifar-10
+test_set_path: ./data/cifar-10
+
+# data augmentation
+augmentation:
+  normalize: True
+  random_crop: True
+  random_horizontal_filp: True
+
+# train
+device: cuda
+input_size: 32
+batch_size: 128
+num_epochs: 200
+num_print: 100
+num_workers: 4
+eval_freq: 1
+
+# test
+test_batch: 200
+
+# optimizer
+optimizer:
+  name: SGD
+  params:
+    lr: 0.1
+    momentum: 0.9
+    weight_decay: 0.0001
+    nesterov: True
+
+# learning rate scheduler
+lr_scheduler:
+  type: STEP
+  lr_epochs: [100, 150, 175]
+  lr_mults: 0.1
+
+# draw
+learning_curve:
+  style: ggplot
+  xtick_step: 5
+  draw_freq: 10
+  save_path: ./
