@@ -1,5 +1,5 @@
 # Image-Classification-Model
-A common model of CNN image classification is implemented, and the framework can be reused to a new network
+Some common models of CNN image classification are implemented, and the framework can be reused to a new network.
 
 ## 1. Requirements
 * python (>=3.6)
